@@ -7,8 +7,10 @@ async function fetchData() {
   const jsonData = await Response.json
   console.log(jsonData);
  }  
- catch{
- if ()
+ catch (error){
+ if (error.name === "AbortError")
+  console.log("");
+  
 
  }
 }
