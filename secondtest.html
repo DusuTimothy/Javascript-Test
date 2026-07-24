@@ -34,7 +34,7 @@
         }
 
         const data = await response.json();
-        const postsArray = data.posts;
+        const postsArray = data;
 
         const htmlCards = postsArray.map(post => `
       <article class="blog-card">
@@ -43,7 +43,7 @@
     `);
 
         const container = document.getElementById('Blog-post');
-        container.innerHTML = '<h2>Blog Posts</h2>' +
+        container.innerHTML = '<h2>Blog Post</h2>' +
           `<div class="blog-card-container">${htmlCards.join('')}</div>`;
 
       } catch (error) {
