@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Second Test</title>
 </head>
+
 <body>
 
   <div id="box">Text to change colour</div>
-    <button id="clickBtn">click To change</button>
+  <button style="margin-top: 20px;" id="clickBtn">click To change</button>
 
-    <script>
-      const boxDiv = document.getElementById('box')
-      const button = document.getElementById('clickBtn')
-      button.addEventListener("click", function () {
-        boxDiv.textContent = 'Text changed'
-      })
-    </script>
+  <script>
+    const boxDiv = document.getElementById('box')
+    const button = document.getElementById('clickBtn')
+    button.addEventListener("click", function () {
+      boxDiv.textContent = 'Text changed'
+      boxDiv.style.backgroundColor = "Navy"
+      boxDiv.style.color = "Red"
+      boxDiv.style.fontSize = "100px"
+      boxDiv.style.marginBottom = "40px" 
+
+    })
+
+
+  </script>
 </body>
+
 </html>
