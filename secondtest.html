@@ -43,8 +43,8 @@
     `);
 
         const container = document.getElementById('Blog-post');
-        container.innerHTML = '<h2>Blog Post</h2>' +
-          `<div class="blog-card-container">${htmlCards.join('')}</div>`;
+        container.innerHTML = '<h2 style= "">Blog Post</h2>' +
+          `<div style= "display: flex " class="blog-card-container">${htmlCards.join('')}</div>`;
 
       } catch (error) {
         console.error('Error handling post data:', error);
