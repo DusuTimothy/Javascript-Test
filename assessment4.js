@@ -16,7 +16,7 @@ let found = users.map((index) => {
   }
   else {
     console.log("You are a senior");
-    
+
   }
 });
 
@@ -24,7 +24,7 @@ let found = users.map((index) => {
 // Question 4
 
 let user = [];
-function bankAccount (accName, accNum) {
+function bankAccount(accName, accNum) {
   let account = {
     accName: accName,
     accNum: accNum,
@@ -32,9 +32,35 @@ function bankAccount (accName, accNum) {
   };
   user.push(account)
 }
+bankAccount("Timothy", 1234);
 
-bankAccount ("Timothy", 1234);
+function deposit(accNam, amount) {
+  user.map((index) => {
+    if (index.accNam === accNam) {
+      index.accBalance += amount;
+    }
+    else {
+      console.log("Invalid account Name");
 
-function name(params) {
-  
-}
+    }
+  })
+};
+deposit("Timothy", 5000);
+
+function withDraw(accNam, amount) {
+  user.map((index) => {
+    if (index.accNam === accNam && index.accBalance >= amount) {
+      index.accBalance += amount;
+    }
+    else {
+      console.log("Invalid account Name");
+
+    }
+  })
+};
+withDraw("Timothy", 5000);
+
+
+
+
+
