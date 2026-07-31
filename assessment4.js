@@ -37,7 +37,7 @@ bankAccount("Timothy", 1234);
 function deposit(accNam, amount) {
   user.map((index) => {
     if (index.accNam === accNam) {
-      index.accBalance += amount;
+     return index.accBalance += amount;
     }
     else {
       console.log("Invalid account Name");
@@ -49,8 +49,8 @@ deposit("Timothy", 5000);
 
 function withDraw(accNam, amount) {
   user.map((index) => {
-    if (index.accNam === accNam && index.accBalance >= amount) {
-      index.accBalance += amount;
+    if (index.accNam === accNam && index.accBalance >= Number(amount)) {
+     return index.accBalance += amount;
     }
     else {
       console.log("Invalid account Name");
@@ -59,6 +59,22 @@ function withDraw(accNam, amount) {
   })
 };
 withDraw("Timothy", 5000);
+
+function checkBalance(accNam) {
+  user.map((index) => {
+    if (index.accNam === accNam) {
+      return index.accBalance
+    }
+    else {
+      console.log("Invalid account Name");
+
+    }
+  })
+};
+checkBalance("Timothy");
+
+console.log(user);
+
 
 
 
