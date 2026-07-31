@@ -19,3 +19,22 @@ let found = users.map((index) => {
     
   }
 });
+
+
+// Question 4
+
+let user = [];
+function bankAccount (accName, accNum) {
+  let account = {
+    accName: accName,
+    accNum: accNum,
+    accBalance: 0
+  };
+  user.push(account)
+}
+
+bankAccount ("Timothy", 1234);
+
+function name(params) {
+  
+}
