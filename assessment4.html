@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>assessment 4</title>
 </head>
+
 <body>
-  <h1 id="panel"></h1>
+  <h1 id="panel">QUESTION 5</h1>
+  <button id="Btn">Click Here</button>
 
   <script>
- let panel = document.getElementById("panel");
- panel.textContent = `panel Updated`;
- panel.style.color = "red";
- panel.style.backgroundColor = "green"
-panel.style.borderRadius = "4px";
-panel.style.textAlign = "center";
+    let panel = document.getElementById("panel");
+    let Btn = document.getElementById("Btn");
+    Btn.onclick = () => {
+      panel.textContent = `panel Updated`;
+      panel.style.color = "red";
+      panel.style.backgroundColor = "green"
+      panel.style.borderRadius = "4px";
+      panel.style.textAlign = "center";
+    }
+
 
   </script>
 </body>
+
 </html>
