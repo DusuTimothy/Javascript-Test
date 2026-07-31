@@ -40,7 +40,7 @@ function deposit(accName, amount) {
   
   if (account) {
     account.accBalance += amount;
-    console.log(`Deposited ${amount}. New balance: ${account.accBalance}`);
+    console.log(`New balance: ${account.accBalance}`);
   } else {
     console.log("Invalid account Name");
   }
@@ -52,7 +52,7 @@ function withDraw(accName, amount) {
   
   if (account && account.accBalance >= amount) {
     account.accBalance -= amount; 
-    console.log(`Withdrew ${amount}. Remaining balance: ${account.accBalance}`);
+    console.log(`Remaining balance: ${account.accBalance}`);
   } else if (!account) {
     console.log("Invalid account Name");
   } else {
@@ -65,7 +65,7 @@ function checkBalance(accName) {
   let account = user.find(u => u.accName === accName);
   
   if (account) {
-    console.log(`${account.accName}'s Balance: ${account.accBalance}`);
+    console.log(`Balance: ${account.accBalance}`);
     return account.accBalance;
   } else {
     console.log("Invalid account Name");
