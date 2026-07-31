@@ -6,7 +6,7 @@ const users = [
 
 ];
 
-let found = users.map((index) => {
+users.map((index) => {
   if (index.age < 18) {
     console.log("You are a minor");
   }
@@ -24,56 +24,57 @@ let found = users.map((index) => {
 // Question 4
 
 let user = [];
+
 function bankAccount(accName, accNum) {
   let account = {
-    accName: accName,
+    accName: accName, 
     accNum: accNum,
     accBalance: 0
   };
-  user.push(account)
+  user.push(account);
 }
 bankAccount("Timothy", 1234);
 
-function deposit(accNam, amount) {
-  user.map((index) => {
-    if (index.accNam === accNam) {
-     return index.accBalance += amount;
-    }
-    else {
-      console.log("Invalid account Name");
-
-    }
-  })
-};
+function deposit(accName, amount) {
+  let account = user.find(u => u.accName === accName);
+  
+  if (account) {
+    account.accBalance += amount;
+    console.log(`Deposited ${amount}. New balance: ${account.accBalance}`);
+  } else {
+    console.log("Invalid account Name");
+  }
+}
 deposit("Timothy", 5000);
 
-function withDraw(accNam, amount) {
-  user.map((index) => {
-    if (index.accNam === accNam && index.accBalance >= Number(amount)) {
-     return index.accBalance += amount;
-    }
-    else {
-      console.log("Invalid account Name");
+function withDraw(accName, amount) {
+  let account = user.find(u => u.accName === accName);
+  
+  if (account && account.accBalance >= amount) {
+    account.accBalance -= amount; 
+    console.log(`Withdrew ${amount}. Remaining balance: ${account.accBalance}`);
+  } else if (!account) {
+    console.log("Invalid account Name");
+  } else {
+    console.log("Insufficient funds");
+  }
+}
+withDraw("Timothy", 2000);
 
-    }
-  })
-};
-withDraw("Timothy", 5000);
-
-function checkBalance(accNam) {
-  user.map((index) => {
-    if (index.accNam === accNam) {
-      return index.accBalance
-    }
-    else {
-      console.log("Invalid account Name");
-
-    }
-  })
-};
+function checkBalance(accName) {
+  let account = user.find(u => u.accName === accName);
+  
+  if (account) {
+    console.log(`${account.accName}'s Balance: ${account.accBalance}`);
+    return account.accBalance;
+  } else {
+    console.log("Invalid account Name");
+  }
+}
 checkBalance("Timothy");
 
 console.log(user);
+
 
 
 
